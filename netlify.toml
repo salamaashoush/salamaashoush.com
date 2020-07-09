@@ -1,0 +1,11 @@
+[build]
+  publish = "public"
+  command = "npm run build"
+  functions = "src/lambda"
+[build.environment]
+  YARN_VERSION = "1.9.4"
+  YARN_FLAGS = "--no-ignore-optional"
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
