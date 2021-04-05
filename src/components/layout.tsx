@@ -1,7 +1,11 @@
-import { Global, css } from "@emotion/react"
+import { css, Global } from "@emotion/react"
 import React, { FC } from "react"
-import { Header } from "./header"
+import Helmet from "react-helmet"
+import { useSiteMetaData } from "../hooks/use-sitemetadata"
+import { Header } from "./Header"
+
 export const Layout: FC<any> = ({ children }) => {
+  const { title, description } = useSiteMetaData()
   return (
     <>
       <Global
@@ -25,7 +29,6 @@ export const Layout: FC<any> = ({ children }) => {
             /* remove gatsby div styling */
             > div {
               margin-top: 0;
-              color: red;
             }
             h1,
             h2,
@@ -48,7 +51,12 @@ export const Layout: FC<any> = ({ children }) => {
           }
         `}
       />
-      <Header></Header>
+      <Helmet>
+        <html lang="en" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+      <Header />
       <main
         css={css`
           margin: 2rem auto;
@@ -61,3 +69,4 @@ export const Layout: FC<any> = ({ children }) => {
     </>
   )
 }
+export default Layout

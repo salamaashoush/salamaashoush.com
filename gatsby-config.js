@@ -1,6 +1,9 @@
 module.exports = {
   plugins: [
     {
+      resolve: `gatsby-plugin-react-helmet`,
+    },
+    {
       resolve: `gatsby-plugin-typescript`,
       options: {
         isTSX: true, // defaults to false
@@ -10,7 +13,6 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-emotion",
-      options: {},
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -19,13 +21,15 @@ module.exports = {
         name: "blog",
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-mdx`,
-    //   options: {
-    //     extensions: [".mdx", ".md", ".markdown"],
-    //     gatsbyRemarkPlugins: [],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/Layout.tsx"),
+        },
+        extensions: [".mdx", ".md"],
+      },
+    },
     {
       resolve: "gatsby-remark-images",
       options: {
