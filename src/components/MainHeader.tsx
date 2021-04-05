@@ -19,7 +19,7 @@ const NavLink = styled<any>(Link)`
     margin-right: 0px;
   }
 `
-export const Header = () => {
+export const MainHeader = () => {
   return (
     <header
       css={css`

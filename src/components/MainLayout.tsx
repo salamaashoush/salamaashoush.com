@@ -2,7 +2,7 @@ import { css, Global } from "@emotion/react"
 import React, { FC } from "react"
 import Helmet from "react-helmet"
 import { useSiteMetaData } from "../hooks/use-sitemetadata"
-import { Header } from "./Header"
+import { MainHeader } from "./MainHeader"
 
 export const Layout: FC<any> = ({ children }) => {
   const { title, description } = useSiteMetaData()
@@ -56,7 +56,7 @@ export const Layout: FC<any> = ({ children }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
-      <Header />
+      <MainHeader />
       <main
         css={css`
           margin: 2rem auto;
