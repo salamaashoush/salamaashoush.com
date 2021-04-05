@@ -26,7 +26,7 @@ Quickly get started using the Gatsby blog theme! This starter creates a new Gats
 
     ```shell
     cd my-themed-blog/
-    gatsby develop
+    z
     ```
 
 3.  **Open the code and start customizing!**
