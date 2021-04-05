@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
-import Layout from "../components/Layout"
+import Layout from "../components/MainLayout"
 import { ReadLink } from "../components/ReadLink"
 
 export const query = graphql`

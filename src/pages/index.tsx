@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import { Layout } from "../components/Layout"
+import { Layout } from "../components/MainLayout"
 import { PostPreview } from "../components/PostPreview"
 import { usePosts } from "../hooks/use-posts"
 
